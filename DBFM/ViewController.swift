@@ -46,6 +46,13 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         eHttp.onSearch("http://douban.fm/j/mine/playlist?channel=0")
         progressView.progress=0.0
         iv.addGestureRecognizer(tap)
+        Async.background {
+            println("This is run on the background queue")
+            //need to play music in the background
+            }.main {
+                println("This is run on the main queue, after the previous block")
+                //keep to play music
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,15 +66,16 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         let imgUrl:String=rowData["picture"] as String
         onSetImage(imgUrl)
     }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "toChannel"){
             var channelC:ChannelController=segue.destinationViewController as ChannelController
             channelC.delegate=self
             channelC.channelData=self.channelData
         } else{
-            var channelD:LoginController=segue.destinationViewController as LoginController
-            channelD.delegate=self
-            channelD.channelData=self.channelData
+//            var channelD:LoginController=segue.destinationViewController as LoginController
+//            channelD.delegate=self
+//            channelD.channelData=self.channelData
 
         }
         
