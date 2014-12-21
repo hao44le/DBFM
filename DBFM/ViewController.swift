@@ -57,7 +57,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         let audioUrl:String=rowData["url"] as String
         onSetAudio(audioUrl)
         let imgUrl:String=rowData["picture"] as String
-//        onSetImage(imgUrl)
+        onSetImage(imgUrl)
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var channelC:ChannelController=segue.destinationViewController as ChannelController
@@ -86,7 +86,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             let audioUrl:String = firDict["url"] as String
             onSetAudio(audioUrl)
             let imgUrl:String=firDict["picture"] as String
- //           onSetImage(imgUrl)
+            onSetImage(imgUrl)
             
             
             
@@ -135,21 +135,21 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         }
         
     }
-//    func onSetImage(url:String){
-//        let image = self.imageCache[url]
-//        if (image != nil){
-//            let imgURL:NSURL=NSURL(string:url)!
-//            let request:NSURLRequest=NSURLRequest(URL:imgURL)
-//            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response:NSURLResponse!,data:NSData!,error:NSError!)->Void in
-//                let img = UIImage(data:data)
-//                self.iv.image=img
-//                self.imageCache[url]=img
-//            })
-//        } else {
-//            self.iv.image = image
-//        }
-//
-//    }
+    func onSetImage(url:String){
+        let image = self.imageCache[url]
+        if (image == nil){
+            let imgURL:NSURL=NSURL(string:url)!
+            let request:NSURLRequest=NSURLRequest(URL:imgURL)
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response:NSURLResponse!,data:NSData!,error:NSError!)->Void in
+                let img = UIImage(data:data)
+                self.iv.image=img
+                self.imageCache[url]=img
+            })
+        } else {
+            self.iv.image = image
+        }
+
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return tableData.count
@@ -168,18 +168,18 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         cell.imageView?.image = UIImage(named:"2cd888c75895ffe6ac8b7dd7ca4e1731.png")
         
-//        let url = rowData["picture"] as String
-//        let image = self.imageCache[url]
-//        if (image != nil){
-//            let imgURL:NSURL=NSURL(string:url)!
-//            let request:NSURLRequest=NSURLRequest(URL:imgURL)
-//            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response:NSURLResponse!,data:NSData!,error:NSError!)->Void in
-//                cell.imageView?.image = UIImage(data:data)
-//                self.imageCache[url] = UIImage(data:data)
-//                })
-//        } else {
-//           cell.imageView?.image = image
-//       }
+        let url = rowData["picture"] as String
+        let image = self.imageCache[url]
+        if (image == nil){
+            let imgURL:NSURL=NSURL(string:url)!
+            let request:NSURLRequest=NSURLRequest(URL:imgURL)
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response:NSURLResponse!,data:NSData!,error:NSError!)->Void in
+                cell.imageView?.image = UIImage(data:data)
+                self.imageCache[url] = UIImage(data:data)
+                })
+        } else {
+           cell.imageView?.image = image
+       }
         
         return cell
 
