@@ -19,6 +19,7 @@
 		C01E53DA1A43C7020056D7F9 /* ChannelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E53D91A43C7020056D7F9 /* ChannelController.swift */; };
 		C01E53DC1A43CDC40056D7F9 /* HttpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E53DB1A43CDC40056D7F9 /* HttpController.swift */; };
 		C05D0DD71A44A5E200955C88 /* Play_by_starfantazy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C05D0DD61A44A5E200955C88 /* Play_by_starfantazy.jpg */; };
+		C088954A1A46840F007AFF4A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08895491A46840F007AFF4A /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		C01E53D91A43C7020056D7F9 /* ChannelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelController.swift; sourceTree = "<group>"; };
 		C01E53DB1A43CDC40056D7F9 /* HttpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpController.swift; sourceTree = "<group>"; };
 		C05D0DD61A44A5E200955C88 /* Play_by_starfantazy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Play_by_starfantazy.jpg; sourceTree = "<group>"; };
+		C08895491A46840F007AFF4A /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = ../LoginController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		C01E53B01A43C2670056D7F9 /* DBFM */ = {
 			isa = PBXGroup;
 			children = (
+				C08895491A46840F007AFF4A /* LoginController.swift */,
 				C01E53B31A43C2670056D7F9 /* AppDelegate.swift */,
 				C01E53B51A43C2670056D7F9 /* ViewController.swift */,
 				C01E53B71A43C2670056D7F9 /* Main.storyboard */,
@@ -238,6 +241,7 @@
 				C01E53B41A43C2670056D7F9 /* AppDelegate.swift in Sources */,
 				C01E53DA1A43C7020056D7F9 /* ChannelController.swift in Sources */,
 				C01E53DC1A43CDC40056D7F9 /* HttpController.swift in Sources */,
+				C088954A1A46840F007AFF4A /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

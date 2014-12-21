@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login Controller-->
         <scene sceneID="RUs-4i-9H2">
             <objects>
-                <viewController id="F2l-DF-wLH" sceneMemberID="viewController">
+                <viewController id="F2l-DF-wLH" customClass="LoginController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7gO-lo-QBa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,7 +107,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="532-bC-33E" kind="modal" id="wMc-3k-XUL"/>
+                                            <segue destination="532-bC-33E" kind="modal" identifier="toChannel" id="wMc-3k-XUL"/>
                                         </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="0Sg-Vx-9E4">
@@ -128,7 +128,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="F2l-DF-wLH" kind="push" id="bxY-ue-Jdb"/>
+                                            <segue destination="F2l-DF-wLH" kind="modal" id="bxY-ue-Jdb"/>
                                         </connections>
                                     </button>
                                 </subviews>

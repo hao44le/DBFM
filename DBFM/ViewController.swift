@@ -60,9 +60,16 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         onSetImage(imgUrl)
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var channelC:ChannelController=segue.destinationViewController as ChannelController
-        channelC.delegate=self
-        channelC.channelData=self.channelData
+        if (segue.identifier == "toChannel"){
+            var channelC:ChannelController=segue.destinationViewController as ChannelController
+            channelC.delegate=self
+            channelC.channelData=self.channelData
+        } else{
+            var channelD:LoginController=segue.destinationViewController as LoginController
+            channelD.delegate=self
+            channelD.channelData=self.channelData
+
+        }
         
     }
     func onChangeChannel(channel_id: String) {
